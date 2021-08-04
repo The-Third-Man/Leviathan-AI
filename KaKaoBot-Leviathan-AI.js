@@ -21,25 +21,25 @@ function response(room, msg, sender, isGroupChat, replier, imageDB, packageName)
     if (msg == "!코인") {
         var coin1 = org.jsoup.Jsoup.connect("https://coinmarketcap.com/ko").get().select("a.cmc-link").get(0).text();
         var coin2 = org.jsoup.Jsoup.connect("https://coinmarketcap.com/ko").get().select("a.cmc-link").get(1).text();
-        var coin3 = "\n\n정보 제공 : bybit.com / @Leviathan AI";
+        var coin3 = "\n\n정보 제공 : 코인마켓캡 / @Leviathan AI";
         replier.reply("암호화폐 갯수 : " + coin1 + "\n" + "거래소 갯수 : " + coin2 + coin3);
     }
 
     if (msg == "!시총") {
         var coin1 = org.jsoup.Jsoup.connect("https://coinmarketcap.com/ko").get().select("a.cmc-link").get(2).text();
-        coin1 += "\n\n정보 제공 : bybit.com / @Leviathan AI";
+        coin1 += "\n\n정보 제공 : 코인마켓캡 / @Leviathan AI";
         replier.reply("<시가 총액>\n" + coin1);
     }
 
     if (msg == "!거래량") {
         var coin1 = org.jsoup.Jsoup.connect("https://coinmarketcap.com/ko").get().select("a.cmc-link").get(3).text();
-        coin1 += "\n\n정보 제공 : bybit.com / @Leviathan AI";
+        coin1 += "\n\n정보 제공 : 코인마켓캡 / @Leviathan AI";
         replier.reply("<24시간 거래량>\n" + coin1);
     }
 
     if (msg == "!도미") {
         var coin1 = org.jsoup.Jsoup.connect("https://coinmarketcap.com/ko").get().select("a.cmc-link").get(4).text();
-        coin1 += "\n\n정보 제공 : bybit.com / @Leviathan AI";
+        coin1 += "\n\n정보 제공 : 코인마켓캡 / @Leviathan AI";
         replier.reply("<도미넌스>\n" + coin1 + "\n비트코인과 이더리움만 각각 표시");
     }
 
@@ -51,7 +51,7 @@ function response(room, msg, sender, isGroupChat, replier, imageDB, packageName)
         total += "이더리움 가스 비용(Average) : \n" + coin2 + "\n\n";
         var coin3 = org.jsoup.Jsoup.connect("https://etherscan.io/gastracker").get().select("div.text-secondary").get(4).text();
         total += "이더리움 가스 비용(High) : \n" + coin3;
-        total += "\n\n정보 제공 : bybit.com / @Leviathan AI";
+        total += "\n\n정보 제공 : 이더스캔 / @Leviathan AI";
         replier.reply(total);
     }
 
